@@ -16,13 +16,10 @@ import itertools
 
 np.random.seed(0)
 N = 500
-K = 12  # out degree number
+K = 12  # out degree 
 steps = 100000
 exp_nums = 30
 output_dir = 'outputs'
-
-N=500
-K=12 # degree number
 
 #設定檔案儲存路徑
 file_path = r''
