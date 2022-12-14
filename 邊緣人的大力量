@@ -67,27 +67,27 @@ for i in range(30):
 
 
 def initialize_exp():
-    deg = [round(i) for i in (np.random.poisson(K, N) * np.random.poisson(K, N)) / K]
+    deg = [round(i) for i in (np.random.poisson(K,N) * np.random.poisson(K,N)) / K]
     G_poisson = directed_spatial_random_graph(
-        num_agents=N,
+        num_agents=N, 
         degree=deg,
-        return_positions=False
-    )
+        return_positions = False
+    ) 
     simrun = Simulation(
-        seed=555,  # seed for replicability
+        seed=555,                                    # seed for replicability
         network=G_poisson,
-        # topology='grid',
-        attributes_initializer="random_categorical",  # continuous opinion with random start value
-        dissimilarity_measure="hamming",  # distance calculator
-        influence_function="similarity_adoption",  # influence
-        neighbor_selector='similar',
-        stop_condition="strict_convergence",  # it is assumed that little change is possible anymore
-        max_iterations=100000,  # simulation stops after this # of ticks
-        communication_regime='one-to-many',
-        parameter_dict={  # dictionary for all arguments passed to modules
-            'n': N,  # size of the network
-            'num_features': 3,  # number of opinion features agents posess
-            'num_traits': 3
+        #topology='grid',
+        attributes_initializer="random_categorical",  
+        dissimilarity_measure="hamming",           # 相似性以漢明距離計算
+        influence_function="similarity_adoption",    # 相似性影響
+        neighbor_selector = 'ramdom',
+        stop_condition="strict_convergence",      
+        max_iterations=100000,                         
+        communication_regime = 'one-to-many',
+        parameter_dict={                             
+            'n':N,                                  
+            'num_features':3,                        # F
+            'num_traits':3,                          # Q
         })
 
     return simrun
