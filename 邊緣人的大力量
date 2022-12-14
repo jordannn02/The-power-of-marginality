@@ -68,13 +68,6 @@ for i in range(30):
 
     csvFile.close()
 
-def poissongraph(n, mu):
-    z = np.zeros(n) 
-    for i in range(n):
-        z[i] = poisson.rvs(mu)  
-    G = directed_spatial_random_graph(z)
-    return G
-
 
 def initialize_exp():
     deg = [round(i) for i in (np.random.poisson(K, N) * np.random.poisson(K, N)) / K]
