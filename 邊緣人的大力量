@@ -16,7 +16,7 @@ import itertools
 
 np.random.seed(0)
 N = 500
-K = 12  # degree number
+K = 12  # out degree number
 steps = 100000
 exp_nums = 30
 output_dir = 'outputs'
@@ -69,10 +69,10 @@ for i in range(30):
     csvFile.close()
 
 def poissongraph(n, mu):
-    z = np.zeros(n)  # n is number of nodes
+    z = np.zeros(n) 
     for i in range(n):
-        z[i] = poisson.rvs(mu)  # mu is the expected value
-    G = expected_degree_graph(z)
+        z[i] = poisson.rvs(mu)  
+    G = directed_spatial_random_graph(z)
     return G
 
 
