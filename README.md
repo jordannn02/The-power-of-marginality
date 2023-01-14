@@ -91,4 +91,3 @@ def do_exp(exp_num):
     result_pd = pd.DataFrame(result)
     # 將DataFrame存成csv檔
     result_pd.to_csv(csv_path)
-![image](https://user-images.githubusercontent.com/78151083/207863148-49952689-c922-4d6d-9272-9e519c79ce8f.png)
