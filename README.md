@@ -1,17 +1,5 @@
 # The-power-of-marginality
-# 定義 poissongraph 函式
-def poissongraph(n, mu):
-    # n 為節點數
-    # mu 為期望值
-    # 建立 z 陣列，大小為 n
-    z = np.zeros(n)
-    # 迴圈，將 z 元素以 Poisson 分布取樣
-    for i in range(n):
-        z[i] = poisson.rvs(mu)
-    # 將 z 作為參數傳入 expected_degree_graph 函式，並將回傳結果存入 G
-    G = expected_degree_graph(z)
-    # 將 G 回傳
-    return G
+
 
 # 定義 initialize_exp 函式
 def initialize_exp():
